@@ -1,2 +1,5 @@
 This is a test file.
+<<<<<<< HEAD
 New Content is added.
+Hello World.
+>>>>>>> feature2
