@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Two Player Dice Roll Game</title>
+        <link rel="stylesheet" href="diceRollStyle.css">
+    </head>
+    <body><div class="box">
+        <h1>Dice Roller</h1>
+        <div class="players-info">
+            <div class="player" id="player1">
+                <h2>Player 1 <span id="player1-name"><br><input type="text" placeholder="Name Here"></span></h2>
+                <p>Current Score: <span id="player1-current">0</span></p>
+                <p>Saved Score: <span id="player1-saved">0</span></p>
+            </div>
+            <div class="player" id="player2">
+                <h2>Player 2 <span id="player2-name"><br><input type="text" placeholder="Name Here"></span></h2>
+                <p>Current Score: <span id="player2-current">0</span></p>
+                <p>Saved Score: <span id="player2-saved">0</span></p>
+            </div>
+        </div>
+        <div class="btn">
+            <img id="dice-rep" src="diceRep.png" alt="Dice" width="100"><br>
+            <button id="roll">Roll Dice</button>
+            <button id="save">Save Score</button>
+        </div>
+        <p id="turn"></p>
+        <p id="winners"></p>
+        <button id="reset">🔁Reset the Game🔁</button>
+    </div>
+    <script src="diceRoll.js"></script>
+    </body>
+   
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
