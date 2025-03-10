@@ -1,0 +1,124 @@
+/*QuizGame.html css property*/
+
+#bg{
+background-image: url("front.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-position: center;
+}
+
+.box{
+    align-self: center;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 3em;
+    margin-top: 3em;
+    border-radius: 10px;
+    color:blanchedalmond;
+}
+
+h1{
+    color:khaki;
+    font-family:arial;
+    font-size: 4em;
+    margin-bottom: 1em;
+}
+
+#form{
+    font-size: 1.3em;
+    margin: 0.5em;
+}
+
+select{
+    border: 1px solid black;
+    font-size: 0.9em;
+    margin: 0.6em;
+       background-color:antiquewhite;
+}
+
+#start,#restart{
+    background-color: darkkhaki;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 2em;
+    cursor: pointer;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    border-radius: 5em;
+    border:2px solid white;
+    box-shadow: 0px 0px 10px white;
+}
+#start:hover,#restart:hover{
+    background-color:palegreen;
+    transform: scale(1.1); 
+}
+
+/*Question.html css property*/
+
+#container{
+    background-image: url("quiz.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#quizGame{
+    text-align: center;
+    color:khaki;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+}
+
+#head{
+    font-size:1.5em;
+    color: white;
+    margin-top: 2em;
+    display: flex;         
+    justify-content: space-around; 
+    align-self: center; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#result{
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-top: 2em;
+    margin:auto;
+}
+
+/*css property for html that is used in javascript page */
+h2{
+    border:8px double whitesmoke;
+    background-color: ghostwhite;
+    box-shadow: 0px 0px 25px white;
+    padding: 2em;
+}
+
+#options button{
+    border:3px solid khaki;
+    background-color:beige;
+    box-shadow: 0px 0px 20px white;
+    padding: 1em;
+    font-family:Arial;
+    font-size: 1em;
+    font-weight: bold;
+    width: 42%;
+    margin: 2%;
+    }
+
+p{
+    text-align: center;
+    color:silver;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 2em;
+}
+#restart{
+    margin-left: 35%;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Game</title>
+        <link rel="stylesheet" href="quizGame.css">
+    </head>
+    <body id="bg">
+        <div class="box" id="box">
+            <h1>Quiz Game</h1>
+            <div id="form">
+            <label for="category">Category Selection</label>
+            <select id="category" name="category"> 
+                <option value="Please select the category">Please select the category</option>
+                <option value="Celebrities">Celebrities</option>    
+                <option value="Entertainment">Entertainment: Books</option>
+                <option value="General Knowledge">General Knowledge</option>
+                <option value="Mythology">Mythology</option>
+                <option value="Sports">Sports</option>
+            </select><br>
+            <label for="Level">Level Selection</label>
+            <select id="level" name="level">
+                <option value="Please select the value">Please select the level</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select></div>
+            <button id="start">START</button>
+        </div>
+        <script src="quizGame.js" defer></script>
+    </body>
+</html>
