@@ -1,0 +1,179 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#dice-rep {
+    height: 65px;
+    width: 70px;
+}
+
+.box {
+    background: linear-gradient(to right, white, rgb(217, 100, 119));
+    border: 8px solid rgb(118, 52, 52);
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    max-width: 800px; 
+    width: 100%; 
+}
+
+.players-info {
+    display: flex;
+    margin-bottom: 30px;
+    font-weight: lighter;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+}
+
+/* Highlight active player */
+.active-player {
+    color: red;
+}
+
+
+
+
+#roll, #save {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 30px;
+    background-color: rgb(40, 220, 40);
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 20px;
+    cursor: pointer;
+}
+#roll:hover, #save:hover {
+    background-color: rgb(10, 141, 25);
+}
+
+#reset {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 50px;
+    background-color: rgb(243, 55, 55);
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+h1 {
+    font-family: cursive;
+    color: rgb(145, 5, 38);
+    font-size: 50px;
+}
+
+input {
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    width: 150px;
+}
+
+#winners {
+    color: red;
+    font-family: cursive;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+@keyframes rollDice {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-50px, -50px) rotate(90deg);
+    }
+    50% {
+        transform: translate(50px, -50px) rotate(180deg);
+    }
+    75% {
+        transform: translate(50px, 50px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        padding: 15px;
+        font-size: 18px;
+        margin: 20px;
+    }
+
+    #roll, #save, #reset {
+        font-size: 16px;
+        padding: 8px 20px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .players-info {
+        flex-direction: column;
+        align-items: center;  
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        margin: 20px;
+        padding: 25px;
+    }
+
+    #roll, #save, #reset {
+        font-size: 17px;
+        padding: 9px 25px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 40px; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .box {
+        padding: 30px;
+        font-size: 20px;
+        max-width: 900px; 
+    }
+
+    #roll, #save, #reset {
+        font-size: 18px;
+        padding: 10px 30px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+}
