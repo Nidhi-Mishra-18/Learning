@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Employee</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+    <script>
+        function fetchEmployeesForDelete() {
+            fetch("http://localhost:8080/api/employees") // Call REST API
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.getElementById("employee-table-body");
+                    tableBody.innerHTML = "";
+                    data.forEach(employee => {
+                        let row = `<tr>
+                            <td>${employee.id}</td>
+                            <td>${employee.employeeId}</td>
+                            <td>${employee.name}</td>
+                            <td>${employee.email}</td>
+                            <td>${employee.salary}</td>
+                            <td>${employee.department}</td>
+                            <td>
+                                <button onclick="confirmDelete(${employee.id})" class="delete-btn">Delete</button>
+                            </td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error("Error fetching employees:", error));
+        }
+        // Confirm before deleting an employee
+        function confirmDelete(employeeId) {
+            if (confirm("Are you sure you want to delete this employee?")) {
+                fetch(`http://localhost:8080/api/employees/${employeeId}`, {
+                    method: "DELETE",
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Employee deleted successfully!");
+                        fetchEmployees(); // Refresh the table
+                    } else {
+                        alert("Error deleting employee!");
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            }
+        }
+        window.onload=fetchEmployeesForDelete;
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="portal-title">HR PORTAL</h1>
+        <nav>
+            <ul>
+                <li><a href="/view-employees">View Employees</a></li>
+                <li><a href="/add-employee">Add Employee</a></li>
+                <li><a href="/edit-employee">Edit Employee</a></li>
+                <li><a href="/delete-employee" onclick="window.location.href='fetchEmployeesForDelete()'">Delete Employee</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="data">Delete Employee Page</div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employee-table-body">
+        </tbody>
+    </table>
+
+    <a href="/dashboard" class="back-link">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" href="styles.css">  
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Add Employee Form -->
+    <div class="form-container">
+        <h2>Add Employee</h2>
+        <form onsubmit="event.preventDefault(); addEmployee();">
+            <table class="add-container">
+                <tr>
+                    <td><label for="employeeId">Employee ID:</label></td>
+                    <td><input type="text" id="employeeId" required></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="department">Department:</label></td>
+                    <td><input type="text" id="department" required></td>
+                </tr>
+                <tr>
+                    <td><label for="salary">Salary:</label></td>
+                    <td><input type="text" id="salary" required></td>
+                </tr>
+            </table>
+        </form>
+        <button type="submit" id="add-btn">Add Employee</button>
+        <button type="button" id="cancel-btn" onclick="window.location.href='/dashboard'">Cancel</button>
+    
+    </div>
+
+    <a href="/dashboard" class="back-link">Back to Dashboard</a>
+
+</body>
+</html>

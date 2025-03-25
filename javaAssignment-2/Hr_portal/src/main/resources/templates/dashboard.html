@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>HR Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css"> <!-- Link external CSS -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 class="portal-title">HR PORTAL</h1>
+        <nav>
+            <ul>
+                <li><a  href="/view-employees" onclick="window.location.href='fetchEmployees()'">View Employees</a></li>
+                <li><a href="/add-employee">Add Employee</a></li>
+                <li><a href="/edit-employee">Edit Employee</a></li>
+                <li><a href="/delete-employee" onclick="window.location.href='fetchEmployeesForDelete()'">Delete Employee</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <h2>Welcome to the HR Portal</h2>
+    </main>
+</body>
+</html>

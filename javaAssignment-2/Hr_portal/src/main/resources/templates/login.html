@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>HR Login</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="login-container">
+    <h1 class="login-title">HR Portal Login</h1>
+
+    <form id="loginForm" class="login-form">
+        <div class="form-group">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" id="password" name="password" class="form-input" required>
+        </div>
+
+        <button type="submit" class="login-button">Login</button>
+
+        <!-- Error Message Display -->
+        <p id="errorMessage" style="color: red; display: none;"></p>
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            fetch("/api/hr/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email: email, password: password })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text(); // Get success message
+                } else {
+                    throw new Error("Invalid Credentials");
+                }
+            })
+            .then(data => {
+                alert(data); // Show success message
+                window.location.href = "/dashboard"; // Redirect to dashboard
+            })
+            .catch(error => {
+                document.getElementById("errorMessage").textContent = error.message;
+                document.getElementById("errorMessage").style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>
+

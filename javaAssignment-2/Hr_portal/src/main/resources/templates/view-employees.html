@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script>
+        // Function to fetch employee data from the REST API
+        function fetchEmployees() {
+            fetch("http://localhost:8080/api/employees") // Call REST API
+                .then(response => response.json())
+                .then(employees => {
+                    const tableBody = document.getElementById("employee-table-body");
+                    tableBody.innerHTML = ""; // Clear existing table data
+
+                    employees.forEach(employee => {
+                        const row = `
+                            <tr>
+                                <td>${employee.id}</td>
+                                <td>${employee.employeeId}</td>
+                                <td>${employee.name}</td>
+                                <td>${employee.email}</td>
+                                <td>${employee.department}</td>
+                            </tr>
+                        `;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch(error => console.error("Error fetching employees:", error));
+        }
+
+        // Load employees when the page loads
+        window.onload = fetchEmployees;
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="portal-title">HR PORTAL</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="fetchEmployees()">View Employees</a></li>
+                <li><a href="/add-employee">Add Employee</a></li>
+                <li><a href="/edit-employee">Edit Employee</a></li>
+                <li><a href="/delete-employee">Delete Employee</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="data">View Employees Data</div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody id="employee-table-body">
+            <!-- Employee rows will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+    <a href="/dashboard" class="back-link">Back to Dashboard</a>
+</body>
+</html>
