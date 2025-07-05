@@ -1,0 +1,17 @@
+.container {
+  padding: 2rem;
+  background: linear-gradient(to bottom, skyblue,pink );
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 8px;;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #21374c;
+  font-family:'Trebuchet MS';
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
